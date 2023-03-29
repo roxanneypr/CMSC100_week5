@@ -23,6 +23,12 @@ const findStudentsPost = async (req, res) => {
     res.send(await Student.find({age: req.body.age}));
 }
 
+//for delete
+const deleteStudentsPost = async (req, res) => {
+    res.send(await Student.delete({age: req.body.age}));
+}
+
+// Create using post
 const addStudentPost = async (req, res) => {
     try{
         const student = new Student({
@@ -39,4 +45,4 @@ const addStudentPost = async (req, res) => {
     }
 }
 
-export{homepage, findStudents, findStudentsPost, addStudentPost};
+export{homepage, findStudents, findStudentsPost, addStudentPost, deleteStudentsPost};
